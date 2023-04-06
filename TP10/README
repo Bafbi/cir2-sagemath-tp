@@ -1,0 +1,19 @@
+def two_line_repr(f):
+    
+    res = "[ "
+    
+    # keys() are dictionnaries entries 
+    for x in f.keys():
+        
+        # pad = number of spaces between two keys 
+        pad = (len(str(f[x])) - len(str(x))) * " " if len(str(f[x])) > len(str(x)) else ""
+        res += pad + str(x) + " "
+    res += "]\n[ "
+    
+    for x in f.keys():
+        pad = (len(str(x)) - len(str(f[x]))) * " " if len(str(x)) > len(str(f[x])) else ""
+        res += pad + str(f[x]) + " "
+        
+    res += "]"
+    
+    print(res)
